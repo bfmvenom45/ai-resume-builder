@@ -37,11 +37,11 @@ export default function Home() {
       </div>
     {resumes.length > 0 && (
       <div className="resumes-section">
-      {resumes.map((resume) => (
-        <div>
-         <ResumeCard key={resume.id} resume={resume} />
-        </div>
-      ))}
+    {resumes.map((resume) => (
+       <div key={resume.id}>
+       <ResumeCard resume={resume} />
+       </div>
+    ))}
     </div>
     )}
     </section>
