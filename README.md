@@ -1,87 +1,158 @@
-# Welcome to React Router!
+# AI Resume Builder
 
-A modern, production-ready template for building full-stack React applications using React Router.
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+A modern, AI-powered resume analysis application built with React Router v7, TypeScript, and Puter.js.
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- 🤖 **AI-Powered Analysis**: Get detailed feedback on your resume using advanced AI
+- 📊 **ATS Compatibility**: Check how well your resume passes Applicant Tracking Systems
+- 🎯 **Targeted Feedback**: Analyze resumes for specific job positions
+- 📱 **Responsive Design**: Works perfectly on desktop and mobile devices
+- 🔐 **Secure Authentication**: User authentication powered by Puter.js
+- � **PDF Processing**: Automatic PDF to image conversion for preview
+- 💾 **Cloud Storage**: Store resumes and analysis results in the cloud
+
+## Tech Stack
+
+- **Frontend**: React 19.1.0, React Router v7
+- **TypeScript**: 5.8.3 for type safety
+- **Styling**: Tailwind CSS 4.1.4 with custom animations
+- **Backend**: Puter.js for authentication, storage, and AI analysis
+- **PDF Processing**: PDF.js 5.4.54
+- **Build Tool**: Vite 6.3.3
 
 ## Getting Started
 
+### Prerequisites
+
+- Node.js 20 or later
+- npm or yarn package manager
+
 ### Installation
 
-Install the dependencies:
+1. Clone the repository:
+\`\`\`bash
+git clone <your-repo-url>
+cd ai-resume-builder
+\`\`\`
 
-```bash
+2. Install dependencies:
+\`\`\`bash
 npm install
-```
+\`\`\`
 
-### Development
-
-Start the development server with HMR:
-
-```bash
+3. Start the development server:
+\`\`\`bash
 npm run dev
-```
+\`\`\`
 
-Your application will be available at `http://localhost:5173`.
+4. Open your browser and navigate to \`http://localhost:5173\`
 
-## Building for Production
+## Project Structure
 
-Create a production build:
+\`\`\`
+app/
+├── components/          # React components
+│   ├── ATS.tsx         # ATS score display
+│   ├── Category.tsx    # Score category badges
+│   ├── Details.tsx     # Detailed analysis
+│   ├── ErrorMessage.tsx # Error handling
+│   ├── FileUploader.tsx # PDF upload component
+│   ├── LoadingSpinner.tsx # Loading states
+│   ├── Navbar.tsx      # Navigation
+│   ├── ResumeCard.tsx  # Resume preview cards
+│   ├── ScoreBadge.tsx  # Score indicators
+│   ├── ScoreCircle.tsx # Circular score display
+│   ├── ScoreGauge.tsx  # Score gauge component
+│   └── Summary.tsx     # Overall analysis summary
+├── lib/                # Utility libraries
+│   ├── helpers.ts      # Helper functions
+│   ├── pdf2image.ts    # PDF conversion utilities
+│   ├── puter.ts        # Puter.js integration
+│   └── utils.ts        # General utilities
+├── routes/             # Page routes
+│   ├── auth.tsx        # Authentication page
+│   ├── home.tsx        # Home page
+│   ├── resume.tsx      # Resume details page
+│   └── upload.tsx      # Upload page
+├── app.css            # Global styles
+├── root.tsx           # Root component
+└── routes.ts          # Route configuration
+\`\`\`
 
-```bash
-npm run build
-```
+## Features Overview
+
+### Resume Upload & Analysis
+- Drag & drop PDF upload with validation
+- Automatic PDF to image conversion for preview
+- AI-powered analysis with detailed feedback
+- ATS compatibility scoring
+
+### Feedback Categories
+- **Overall Score**: Combined rating across all categories
+- **ATS Compatibility**: How well the resume passes tracking systems
+- **Content Quality**: Assessment of resume content and relevance
+- **Structure & Format**: Layout and organization evaluation
+- **Skills Assessment**: Skills alignment with job requirements
+- **Tone & Style**: Professional presentation evaluation
+
+### User Experience
+- Clean, modern interface with smooth animations
+- Responsive design for all screen sizes
+- Real-time processing status updates
+- Error handling with helpful messages
+- Secure cloud storage and authentication
+
+## Available Scripts
+
+- \`npm run dev\` - Start development server
+- \`npm run build\` - Build for production
+- \`npm run start\` - Start production server
+- \`npm run typecheck\` - Run TypeScript type checking
 
 ## Deployment
 
 ### Docker Deployment
 
-To build and run using Docker:
+Build and run using Docker:
 
-```bash
-docker build -t my-app .
+\`\`\`bash
+docker build -t ai-resume-builder .
+docker run -p 3000:3000 ai-resume-builder
+\`\`\`
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
+### Manual Deployment
 
-The containerized application can be deployed to any platform that supports Docker, including:
+1. Build the application:
+\`\`\`bash
+npm run build
+\`\`\`
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+2. Deploy the \`build/\` directory to your hosting platform
 
-### DIY Deployment
+## Environment Configuration
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+The application uses Puter.js for backend services, which requires no additional environment configuration. Simply ensure you have:
 
-Make sure to deploy the output of `npm run build`
+- Puter.js script loaded (handled automatically)
+- Proper authentication flow setup
+- PDF.js worker files accessible
 
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
+## Contributing
 
-## Styling
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+## License
 
----
+This project is licensed under the MIT License.
 
-Built with ❤️ using React Router.
+## Acknowledgments
+
+- [Puter.js](https://puter.com/) for backend services
+- [React Router](https://reactrouter.com/) for routing
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [PDF.js](https://mozilla.github.io/pdf.js/) for PDF processing

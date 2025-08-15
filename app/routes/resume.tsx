@@ -1,5 +1,5 @@
 
-import { use, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import ATS from "~/components/ATS";
 import Details from "~/components/Details";
@@ -27,37 +27,51 @@ const Resume = () => {
 
     useEffect(() => {
         const loadResume = async () => {
-            const resume = await kv.get(`resume:${id}`);
+            try {
+                const resume = await kv.get(`resume:${id}`);
 
-            if (!resume) {
-                console.error("Resume not found");
-                return;
+                if (!resume) {
+                    console.error("Resume not found");
+                    return;
+                }
+                const data = JSON.parse(resume);
+                console.log("Resume data:", data);
+
+                // Load PDF file
+                const resumeBlob = await fs.read(data.resumePath);
+                if (!resumeBlob) {
+                    console.error("Failed to read resume file");
+                    return;
+                }
+                const pdfBlob = new Blob([resumeBlob], { type: 'application/pdf' });
+                const resumeUrl = URL.createObjectURL(pdfBlob);
+                setResumeUrl(resumeUrl);
+
+                // Load image file
+                const imageBlob = await fs.read(data.imagePath);
+                if (!imageBlob) {
+                    console.error("Failed to read image file");
+                    return;
+                }
+                const imageBlob2 = new Blob([imageBlob], { type: 'image/png' });
+                const imageUrl = URL.createObjectURL(imageBlob2);
+                setImageUrl(imageUrl);
+                setFeedback(data.feedback);
+                console.log("Successfully loaded:", {resumeUrl, imageUrl, feedback: data.feedback});
+            } catch (error) {
+                console.error("Error loading resume:", error);
             }
-            const data = JSON.parse(resume);
-
-            const resumeBlob = await fs.read(data.resumePath);
-            if (!resumeBlob) {
-                console.error("Failed to read resume file");
-                return;
-            }
-            const pdfBlob = new Blob([resumeBlob], { type: 'application/pdf' });
-            const resumeUrl = URL.createObjectURL(pdfBlob);
-            setResumeUrl(resumeUrl);
-
-
-            const imageBlob = await fs.read(data.imagePath);
-            if (!imageBlob) {
-                console.error("Failed to read image file");
-                return;
-            }
-            const imageUrl = URL.createObjectURL(imageBlob);
-            setImageUrl(imageUrl);
-            setFeedback(data.feedback);
-            console.log({resumeUrl, imageUrl, feedback: data.feedback});
-
         }
 
-        loadResume();
+        if (id) {
+            loadResume();
+        }
+
+        // Cleanup function
+        return () => {
+            if (imageUrl) URL.revokeObjectURL(imageUrl);
+            if (resumeUrl) URL.revokeObjectURL(resumeUrl);
+        };
     }, [id]);
     return (
         <main className="!pt-0">
@@ -94,10 +108,10 @@ const Resume = () => {
                                 Resume Analysis
                             </h2>
                             {feedback ? (
-                                <div className="flex flex-col gap-8  ani fade-in duration-1000">
+                                <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
                                         <Summary feedback={feedback}/>
-                                        <ATS score={feedback.ATS.score || 0} suggestions={feedback.padStart.tips || []} />
-                                        <Details feedback={feedback.details} /> 
+                                        <ATS score={feedback.ATS.score || 0} suggestions={feedback.ATS.tips || []} />
+                                        <Details feedback={feedback} /> 
                                 </div>
                             ) : (
                                 <img

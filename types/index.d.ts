@@ -14,6 +14,11 @@ interface Resume {
   feedback: Feedback;
 }
 
+interface KVItem {
+  key: string;
+  value: string;
+}
+
 interface Feedback {
   overallScore: number;
   ATS: {
