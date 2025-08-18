@@ -6,7 +6,7 @@ A modern, AI-powered resume analysis application built with React Router v7, Typ
 
 > **Note**: This project was built following the tutorial by JavaScript Mastery: [Build a Mind-Blowing AI Resume Builder SaaS with React Router v7](https://www.youtube.com/watch?v=iYOz165wGkQ&t=1s&ab_channel=JavaScriptMastery)
 
-## 🚀 [Live Demo](https://your-app-url.vercel.app) | [Portfolio](https://your-portfolio.com)
+## 🚀 [Live Demo](https://ai-resume-builder-5lx1.vercel.app/) | [Portfolio](https://dev-bushko.vercel.app/)
 
 ## 📸 Screenshots
 
