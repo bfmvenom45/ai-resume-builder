@@ -1,7 +1,32 @@
 {
   "name": "ai-resume-builder",
+  "version": "1.0.0",
+  "description": "AI-powered resume analysis application built with React Router v7, TypeScript, and Puter.js",
   "private": true,
   "type": "module",
+  "keywords": [
+    "react",
+    "typescript",
+    "ai",
+    "resume",
+    "react-router",
+    "tailwindcss",
+    "puter",
+    "pdf",
+    "ats"
+  ],
+  "author": {
+    "name": "bfmvenom45",
+    "url": "https://github.com/bfmvenom45"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bfmvenom45/ai-resume-builder.git"
+  },
+  "homepage": "https://github.com/bfmvenom45/ai-resume-builder#readme",
+  "bugs": {
+    "url": "https://github.com/bfmvenom45/ai-resume-builder/issues"
+  },
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",

@@ -30,10 +30,7 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
         
         // Очищаем состояние компонента
         onFileSelect?.(null);
-        
-        // Очищаем внутренние файлы dropzone
-        acceptedFiles.length = 0;
-    }, [onFileSelect, acceptedFiles]);
+    }, [onFileSelect]);
 
     return (
         <div className="w-full gradient-border">
