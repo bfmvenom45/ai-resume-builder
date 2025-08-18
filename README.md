@@ -1,6 +1,23 @@
 # AI Resume Builder
 
+![AI Resume Builder](https://img.shields.io/badge/React-18.2.0-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue) ![React Router](https://img.shields.io/badge/React%20Router-v7-orange) ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.4-blue)
+
 A modern, AI-powered resume analysis application built with React Router v7, TypeScript, and Puter.js.
+
+> **Note**: This project was built following the tutorial by JavaScript Mastery: [Build a Mind-Blowing AI Resume Builder SaaS with React Router v7](https://www.youtube.com/watch?v=iYOz165wGkQ&t=1s&ab_channel=JavaScriptMastery)
+
+## 🚀 [Live Demo](https://your-app-url.vercel.app) | [Portfolio](https://your-portfolio.com)
+
+## 📸 Screenshots
+
+*Screenshots will be added after deployment. The application includes:*
+
+- 🏠 **Home Page** - Welcome screen with project overview
+- 📤 **Upload Page** - Drag & drop PDF resume upload
+- 📊 **Analysis Results** - Detailed AI feedback and ATS scoring
+- 📱 **Mobile Responsive** - Optimized for all devices
+
+> **Note:** To create screenshots, run `./take-screenshots.sh` after starting the dev server. See [screenshots/README.md](screenshots/README.md) for detailed instructions.
 
 ## Features
 
@@ -112,6 +129,27 @@ app/
 
 ## Deployment
 
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to [Vercel](https://vercel.com/)
+3. Vercel will automatically detect the configuration from `vercel.json`
+4. Deploy with one click
+
+### Netlify
+
+1. Push your code to GitHub
+2. Connect your repository to [Netlify](https://netlify.com/)
+3. Netlify will use the configuration from `netlify.toml`
+4. Deploy automatically
+
+### Railway
+
+1. Install Railway CLI: `npm install -g @railway/cli`
+2. Login: `railway login`
+3. Initialize: `railway init`
+4. Deploy: `railway up`
+
 ### Docker Deployment
 
 Build and run using Docker:
@@ -128,7 +166,7 @@ docker run -p 3000:3000 ai-resume-builder
 npm run build
 \`\`\`
 
-2. Deploy the \`build/\` directory to your hosting platform
+2. Deploy the \`build/client/\` directory to your hosting platform
 
 ## Environment Configuration
 
@@ -152,6 +190,8 @@ This project is licensed under the MIT License.
 
 ## Acknowledgments
 
+- Built following the tutorial by [JavaScript Mastery](https://www.youtube.com/@JavaScriptMastery)
+- Tutorial: [Build a Mind-Blowing AI Resume Builder SaaS with React Router v7](https://www.youtube.com/watch?v=iYOz165wGkQ&t=1s&ab_channel=JavaScriptMastery)
 - [Puter.js](https://puter.com/) for backend services
 - [React Router](https://reactrouter.com/) for routing
 - [Tailwind CSS](https://tailwindcss.com/) for styling
