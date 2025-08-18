@@ -1,6 +1,6 @@
 # AI Resume Builder
 
-![AI Resume Builder](https://img.shields.io/badge/React-18.2.0-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue) ![React Router](https://img.shields.io/badge/React%20Router-v7-orange) ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.4-blue)
+![AI Resume Builder](https://img.shields.io/badge/React-18.2.0-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue) ![React Router](https://img.shields.io/badge/React%20Router-v7-orange) ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.4-blue) ![Deploy Ready](https://img.shields.io/badge/Deploy-Ready-brightgreen) ![Tutorial](https://img.shields.io/badge/Tutorial-JavaScript%20Mastery-red)
 
 A modern, AI-powered resume analysis application built with React Router v7, TypeScript, and Puter.js.
 
